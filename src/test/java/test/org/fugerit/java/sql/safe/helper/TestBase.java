@@ -1,9 +1,7 @@
 package test.org.fugerit.java.sql.safe.helper;
 
-import org.fugerit.java.core.db.connect.ConnectionFactory;
 import org.fugerit.java.core.db.connect.ConnectionFactoryImpl;
 import org.fugerit.java.core.db.dao.DAOException;
-import org.fugerit.java.core.function.SafeFunction;
 import org.fugerit.java.core.util.PropsIO;
 
 import java.sql.Connection;
