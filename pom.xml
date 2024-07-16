@@ -13,7 +13,7 @@
 
 	<name>sql-safe-helper</name>
 	<description>Simple helper to handle update / insert / delete in a SAFE mode.</description>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 
 	<licenses>
 		<license>
