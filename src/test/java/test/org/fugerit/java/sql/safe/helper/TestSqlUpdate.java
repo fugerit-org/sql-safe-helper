@@ -10,7 +10,7 @@ class TestSqlUpdate extends  TestBase {
         int expected = 2;
         String sql = "UPDATE sql_safe_test SET DESCRIPTION = 'test update' WHERE id_group = 1";
         boolean rollback = false;
-        int result = this.testWorker( expected, rollback, sql );
+        int result = this.testUpdateWorker( expected, rollback, sql );
         Assertions.assertEquals( expected, result );
     }
 
@@ -19,7 +19,7 @@ class TestSqlUpdate extends  TestBase {
         int expected = 11;
         String sql = "UPDATE sql_safe_test SET DESCRIPTION = 'test update'";
         boolean rollback = true;
-        int result = this.testWorker( expected, rollback, sql );
+        int result = this.testUpdateWorker( expected, rollback, sql );
         Assertions.assertEquals( 0, result );
     }
 

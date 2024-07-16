@@ -10,7 +10,7 @@ class TestSqlDelete extends  TestBase {
         int expected = 1;
         String sql = "DELETE FROM sql_safe_test WHERE id = 1";
         boolean rollback = false;
-        int result = this.testWorker( expected, rollback, sql );
+        int result = this.testUpdateWorker( expected, rollback, sql );
         Assertions.assertEquals( expected, result );
     }
 
@@ -19,7 +19,7 @@ class TestSqlDelete extends  TestBase {
         int expected = 0;
         String sql = "DELETE FROM sql_safe_test WHERE id = -1";
         boolean rollback = false;
-        int result = this.testWorker( expected, rollback, sql );
+        int result = this.testUpdateWorker( expected, rollback, sql );
         Assertions.assertEquals( expected, result );
     }
 
@@ -28,7 +28,7 @@ class TestSqlDelete extends  TestBase {
         int expected = 2;
         String sql = "DELETE FROM sql_safe_test WHERE id_group = 2";
         boolean rollback = false;
-        int result = this.testWorker( expected, rollback, sql );
+        int result = this.testUpdateWorker( expected, rollback, sql );
         Assertions.assertEquals( expected, result );
     }
 

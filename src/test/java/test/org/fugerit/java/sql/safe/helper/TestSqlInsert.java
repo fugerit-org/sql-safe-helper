@@ -10,7 +10,7 @@ class TestSqlInsert extends  TestBase {
         int expected = 1;
         String sql = "INSERT INTO sql_safe_test ( ID, ID_GROUP, DESCRIPTION ) VALUES ( 5, 1, 'test 5' )";
         boolean rollback = false;
-        int result = this.testWorker( expected, rollback, sql );
+        int result = this.testUpdateWorker( expected, rollback, sql );
         Assertions.assertEquals( expected, result );
     }
 

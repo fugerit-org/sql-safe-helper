@@ -25,7 +25,7 @@ class TestBase {
         return ConnectionFactoryImpl.newInstance( props ).getConnection();
     }
 
-    protected int testWorker( int expected, boolean rollback, String sql ) {
+    protected int testUpdateWorker(int expected, boolean rollback, String sql ) {
         return SafeFunction.get( () -> {
             SqlSafeHelperFacade facade = new SqlSafeHelperFacade();
             log.info( "testUpdate001" );
