@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 public class SqlExceptionHelper {
 
-    public SqlExceptionHelper() {}
+    private SqlExceptionHelper() {}
 
     public static SQLException findSQLException(Throwable e ) {
         if ( e == null ) {
