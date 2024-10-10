@@ -3,33 +3,20 @@ package test.org.fugerit.java.sql.safe.helper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 class TestSqlDelete extends  TestBase {
 
     @Test
-    void testDelete001() {
-        int expected = 1;
-        String sql = "DELETE FROM sql_safe_test WHERE id = 1";
-        boolean rollback = false;
-        int result = this.testUpdateWorker( expected, rollback, sql );
-        Assertions.assertEquals( expected, result );
-    }
-
-    @Test
-    void testDelete002() {
-        int expected = 0;
-        String sql = "DELETE FROM sql_safe_test WHERE id = -1";
-        boolean rollback = false;
-        int result = this.testUpdateWorker( expected, rollback, sql );
-        Assertions.assertEquals( expected, result );
-    }
-
-    @Test
-    void testDelete003() {
-        int expected = 2;
-        String sql = "DELETE FROM sql_safe_test WHERE id_group = 2";
-        boolean rollback = false;
-        int result = this.testUpdateWorker( expected, rollback, sql );
-        Assertions.assertEquals( expected, result );
+    void testDelete() {
+        Arrays.asList(
+          new InputModel( "DELETE FROM sql_safe_test WHERE id = 1", false, 1 ),
+          new InputModel( "DELETE FROM sql_safe_test WHERE id = -1", false, 0 ),
+          new InputModel( "DELETE FROM sql_safe_test WHERE id_group = 2", false, 2 )
+        ).forEach( c -> {
+            int result = this.testUpdateWorker( c.getExpected(), c.isRollback(), c.getSql() );
+            Assertions.assertEquals( c.getExpected(), result );
+        });
     }
 
 }
