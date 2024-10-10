@@ -33,7 +33,8 @@ try ( Connection conn = ... ) {
     int expectedUpdateResult = 1;
     SqlSafeHelperOutput output = facade.update( conn, expectedUpdateResult, sql );
     log.info( "isRollback()   : {}", output.isRollback() );   // true if a rollback has been needed
-    log.info( "updateResult() : {}", output.getValue() );     // update result 
+    log.info( "updateResult() : {}", output.getValue() );     // update result (se only if no roolback) 
+    log.info( "actualUpdateResult() : {}", output.getActualValue() );     // update result (se even in case of rollback)
 }
 ```
 
