@@ -6,7 +6,7 @@ public class SqlExceptionHelper {
 
     private SqlExceptionHelper() {}
 
-    public static SQLException findSQLException(Throwable e ) {
+    public static SQLException findSQLException(Throwable e) {
         if ( e == null ) {
             return null;
         } else if ( e instanceof SQLException) {

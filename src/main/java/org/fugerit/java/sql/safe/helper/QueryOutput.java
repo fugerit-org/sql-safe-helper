@@ -7,6 +7,7 @@ import org.fugerit.java.core.util.MapEntry;
 import java.util.*;
 import java.util.stream.Collectors;
 
+@Getter
 public class QueryOutput {
 
     public QueryOutput() {
@@ -14,21 +15,17 @@ public class QueryOutput {
         this.columns = new ArrayList<>();
     }
 
-    @Getter
-    private Collection<ColumnModel> columns;
+    private final Collection<ColumnModel> columns;
 
-    @Getter
-    private Collection<Collection<Object>> rows;
+    private final Collection<Collection<Object>> rows;
 
     public Collection<Collection<MapEntry<ColumnModel, Object>>> getRowsMeta() {
         List<ColumnModel> cols = new ArrayList<>( this.columns );
         return this.rows.stream().map( c -> {
             Collection<MapEntry<ColumnModel, Object>> row = new ArrayList<>();
-            int count = 0;
             Iterator<Object> it = c.iterator();
-            while ( it.hasNext() ) {
-                row.add( new MapEntry<>( cols.get( count ), it.next() ) );
-                count++;
+            for ( int k = 0; it.hasNext(); k++ ) {
+                row.add( new MapEntry<>( cols.get( k ), it.next() ) );
             }
             return row;
         } ).collect( Collectors.toList() );
