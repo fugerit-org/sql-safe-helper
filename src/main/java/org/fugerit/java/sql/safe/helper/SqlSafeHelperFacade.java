@@ -26,10 +26,12 @@ public class SqlSafeHelperFacade {
         conn.setAutoCommit( false );
         try {
             int updateResult = DAOUtilsNG.update( conn, opDAO );
+            output.setActualValue( updateResult );  // set regardless of rollback
             if ( updateResult != expected ) {
                 conn.rollback();
                 output.setRollback( true );
             } else {
+                conn.commit();
                 output.setValue( updateResult );
             }
         } finally {

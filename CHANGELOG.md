@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- new actualValue field in SqlSafeHelperOutput (contains the update result, even if a rollback occurs)
 - fj-version set to 8.6.5
 
 ## [1.1.0 - 2024-07-16]

@@ -28,11 +28,12 @@ class TestBase {
     protected int testUpdateWorker(int expected, boolean rollback, String sql ) {
         return SafeFunction.get( () -> {
             SqlSafeHelperFacade facade = new SqlSafeHelperFacade();
-            log.info( "testUpdate001" );
+            log.info( "testUpdate expected : {}, sql : {}", expected, sql );
             try ( Connection conn = this.getConnection() ) {
                 log.info( "int count : {}", DAOUtilsNG.extraOne( conn, "SELECT count(*) FROM sql_safe_test", LongRSE.DEFAULT ));
                 SqlSafeHelperOutput output = facade.update( conn, expected, sql );
                 Assertions.assertEquals( rollback, output.isRollback() );
+                log.info( "output : value : {}, actualValue : {}, rollback : {}", output.getValue(), output.getActualValue(), output.isRollback() );
                 return output.getValue();
             }
         } );
