@@ -1,0 +1,8 @@
+# native-helper-graalvm generation configuration
+---
+createParentDirectory: true
+generate:
+  - className: org.fugerit.java.sql.safe.helper.QueryOutput
+    mode: getters
+  - className: org.fugerit.java.sql.safe.helper.SqlSafeHelperOutput
+    mode: getters

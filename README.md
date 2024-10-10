@@ -8,6 +8,7 @@ Simple helper to handle update / insert / delete in a SAFE mode.
 [![code of conduct](https://img.shields.io/badge/conduct-Contributor%20Covenant-purple.svg)](https://github.com/fugerit-org/fj-universe/blob/main/CODE_OF_CONDUCT.md)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=fugerit-org_sql-safe-helper&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=fugerit-org_sql-safe-helper)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=fugerit-org_sql-safe-helper&metric=coverage)](https://sonarcloud.io/summary/new_code?id=fugerit-org_sql-safe-helper)
+[![GraalVM Ready](https://img.shields.io/badge/GraalVM-Ready-orange?style=plastic)](https://universe.fugerit.org/src/docs/ref/graalvm-ready.html)
 
 [![Java runtime version](https://img.shields.io/badge/run%20on-java%2011+-%23113366.svg?style=for-the-badge&logo=openjdk&logoColor=white)](https://universe.fugerit.org/src/docs/versions/java11.html)
 [![Java build version](https://img.shields.io/badge/build%20on-java%2011+-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)](https://universe.fugerit.org/src/docs/versions/java11.html)

@@ -13,7 +13,7 @@
 
 	<name>sql-safe-helper</name>
 	<description>Simple helper to handle update / insert / delete in a SAFE mode.</description>
-	<version>1.2.2-SNAPSHOT</version>
+	<version>1.2.2</version>
 
 	<licenses>
 		<license>
@@ -72,6 +72,34 @@
 		</dependency>
 
 	</dependencies>
+
+	<build>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.fugerit.java</groupId>
+				<artifactId>native-helper-maven-plugin</artifactId>
+				<version>1.4.4</version>
+				<executions>
+					<execution>
+						<id>generate-native-configuration</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<nativeHelperConfigPath>${project.basedir}/src/main/config/native-helper-config.yaml</nativeHelperConfigPath>
+							<reflectConfigJsonOutputPath>${project.build.outputDirectory}/META-INF/native-image/reflect-config.json</reflectConfigJsonOutputPath>
+							<warnOnError>false</warnOnError>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+
+	</build>
 
 	<organization>
 		<url>https://www.fugerit.org</url>

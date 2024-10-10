@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.2 - 2024-10-10]
+
+### Changed
+
+- [GraalVM ready](https://universe.fugerit.org/src/docs/ref/graalvm-ready.html)
+
 ## [1.2.1 - 2024-10-10]
 
 ### Fixed
